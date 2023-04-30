@@ -1,0 +1,58 @@
+Release Name: NXP USBSIO Library
+================================
+ 
+USBSIO Library redistributables             Version: 2.x
+                                            Author: NXP
+                                            License: BSD-3-Clause
+                                            Content register: this file
+                                            Format: binary library and accompanying header files
+                                            Location: bin/*, include/*
+ 
+ 
+USBSIO Library source code                  Version: 2.x
+                                            Author: NXP
+                                            License: BSD-3-Clause
+                                            Content register: this file
+                                            Format: source code
+                                            Location: src/*
+ 
+ 
+USBSIO Library test code                    Version: n/a
+                                            Author: NXP
+                                            License: BSD-3-Clause
+                                            Content register: this file
+                                            Format: source code
+                                            Location: test/*
+ 
+ 
+USBSIO Library Python wrapper               Version: 2.x
+and Python test code                        Author: NXP
+                                            License: BSD-3-Clause
+                                            Content register: this file
+                                            Format: source code
+                                            Location: python/*
+ 
+ 
+HIDAPI Library                              Version: n/a
+cross-platform USB/HID communication        Authors: Alan Ott <alan@signal11.us>
+library for Linux, Mac, Windows                      Ludovic Rousseau <rousseau@debian.org>
+                                                     others as in https://github.com/signal11/hidapi/blob/master/AUTHORS.txt
+                                            Multiple license: license chosen BSD-3-Clause, 
+                                                     https://github.com/signal11/hidapi/blob/master/LICENSE-bsd.txt
+                                            Original location: https://github.com/signal11/hidapi
+                                            Format: modified source code
+                                            Location: src/hid_api/*
+
+
+HIDAPI Library                              Version: 0.11.2 and later
+new forked version                          Authors: Alan Ott <alan@signal11.us>
+                                                     Ludovic Rousseau <rousseau@debian.org>
+                                                     others as in https://github.com/signal11/hidapi/blob/master/AUTHORS.txt
+                                                     libusb/hidapi Team
+                                                     For a comprehensive list of contributions, see the commit list at github:
+                                                     https://github.com/libusb/hidapi/graphs/contributors
+                                            Multiple license: license chosen BSD-3-Clause,
+                                                     https://github.com/libusb/hidapi/blob/master/LICENSE-bsd.txt
+                                            Original https://github.com/libusb/hidapi
+                                            Format: modified source code
+                                            Location: src/hid_api/*

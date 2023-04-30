@@ -1,0 +1,1 @@
+See the 'license' folder for SoftwareContentRegister.txt file and related license files.
