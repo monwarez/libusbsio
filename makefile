@@ -6,15 +6,20 @@
 #  NXP USBSIO Library Makefile
 # 
 
-CC = gcc
-CXX = g++
+CC ?= gcc
+CXX ?= g++
 AR = ar -rcs
 UNAME := $(shell uname)
 UNAME_M := $(shell uname -m)
 
 VPATH := src
+ifeq ($(UNAME), FreeBSD)
+SRCS := lpcusbsio.c hid.c
+CFLAGS += -Iinclude -Isrc/hid_api/freebsd -fPIC -Wall -c
+else
 SRCS := lpcusbsio.c hid.c
 CFLAGS += -Iinclude -Isrc/hid_api/hidapi -fPIC -Wall -c
+endif
 dir_guard = @mkdir -p $(@D)
 
 
@@ -31,6 +36,16 @@ BINDIR = linux_$(UNAME_M)
 VPATH += src/hid_api/linux
 LDFLAGS +=  -shared
 LIBS += `pkg-config libusb-1.0 libudev --libs`
+LIBNAME_A = libusbsio.a
+LIBNAME_SO = libusbsio.so
+endif
+
+ifeq ($(UNAME), FreeBSD)
+BINDIR = freebsd_$(UNAME_M)
+VPATH += src/hid_api/freebsd
+LDFLAGS +=  -shared
+CFLAGS += `pkg-config libusb-1.0 libudev hidapi --cflags`
+LDFLAGS += `pkg-config libusb-1.0 libudev hidapi --libs`
 LIBNAME_A = libusbsio.a
 LIBNAME_SO = libusbsio.so
 endif
